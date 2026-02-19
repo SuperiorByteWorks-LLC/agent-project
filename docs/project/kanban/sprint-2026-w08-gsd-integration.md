@@ -196,7 +196,7 @@ _No blocked items._
 - **Feb 19:** Template Mermaid standards confirmed as authoritative
 - **Feb 19:** Phase 2 alignment complete — documentation standards aligned
 - **Feb 19:** Phase 3 verification complete — integration guide created
-- **Feb 19:** GitHub PR #2 submitted — https://github.com/SuperiorByteWorks-LLC/agent-project/pull/2
+- **Feb 19:** GitHub PR #2 submitted — <https://github.com/SuperiorByteWorks-LLC/agent-project/pull/2>
 
 ### GSD Phase Context
 
@@ -228,7 +228,7 @@ _No blocked items._
 | Architecture Decision | `agentic/adr/ADR-009-gsd-integration-orchestration-layer.md`  | ✅ Complete  |
 | Integration Guide     | `docs/project/GSD_INTEGRATION_GUIDE.md`                       | ✅ Complete  |
 | PR Record             | `docs/project/pr/pr-00000002-gsd-integration.md`              | ✅ Complete  |
-| GitHub PR             | https://github.com/SuperiorByteWorks-LLC/agent-project/pull/2 | ✅ Submitted |
+| GitHub PR             | <https://github.com/SuperiorByteWorks-LLC/agent-project/pull/2> | ✅ Submitted |
 
 ### Next Sprint
 
