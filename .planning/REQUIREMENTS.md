@@ -9,18 +9,18 @@ Requirements for initial integration release. Each maps to roadmap phases.
 
 ### Planning Layer Integration
 
-- [ ] **PLAN-01**: GSD `.planning/` directory structure integrates cleanly with existing repo layout
-- [ ] **PLAN-02**: PROJECT.md captures integration vision and preserves template's existing validated capabilities
-- [ ] **PLAN-03**: REQUIREMENTS.md defines REQ-ID traceability aligned with template conventions
-- [ ] **PLAN-04**: ROADMAP.md phases map to incremental integration milestones
-- [ ] **PLAN-05**: STATE.md tracks project memory and decision history
+- [x] **PLAN-01**: GSD `.planning/` directory structure integrates cleanly with existing repo layout
+- [x] **PLAN-02**: PROJECT.md captures integration vision and preserves template's existing validated capabilities
+- [x] **PLAN-03**: REQUIREMENTS.md defines REQ-ID traceability aligned with template conventions
+- [x] **PLAN-04**: ROADMAP.md phases map to incremental integration milestones
+- [x] **PLAN-05**: STATE.md tracks project memory and decision history
 
 ### Documentation Standards Alignment
 
-- [ ] **DOC-01**: Template's Mermaid style guide (23 diagram types) takes precedence over GSD defaults
-- [ ] **DOC-02**: Markdown style guide applies to all `.planning/` artifacts
-- [ ] **DOC-03**: ADR format maintained for integration architecture decisions
-- [ ] **DOC-04**: All diagrams follow accessibility standards (accTitle, accDescr, classDef)
+- [x] **DOC-01**: Template's Mermaid style guide (23 diagram types) takes precedence over GSD defaults
+- [x] **DOC-02**: Markdown style guide applies to all `.planning/` artifacts
+- [x] **DOC-03**: ADR format maintained for integration architecture decisions
+- [x] **DOC-04**: All diagrams follow accessibility standards (accTitle, accDescr, classDef)
 
 ### Execution Layer Integration
 
@@ -31,7 +31,7 @@ Requirements for initial integration release. Each maps to roadmap phases.
 
 ### Project Tracking Integration
 
-- [ ] **TRACK-01**: Kanban boards reference active GSD phase and REQ-IDs
+- [x] **TRACK-01**: Kanban boards reference active GSD phase and REQ-IDs
 - [ ] **TRACK-02**: PR records document phase deliverables with traceability
 - [ ] **TRACK-03**: Issue records track blockers and decisions
 - [ ] **TRACK-04**: Source-of-truth sync updates both `.planning/` and `docs/project/`
@@ -40,8 +40,8 @@ Requirements for initial integration release. Each maps to roadmap phases.
 
 - [ ] **VERIFY-01**: Integration tested end-to-end on experimental branch
 - [ ] **VERIFY-02**: Comprehensive integration guide created with examples
-- [ ] **VERIFY-03**: All v1 requirements mapped to phases with success criteria
-- [ ] **VERIFY-04**: ADR-009 documents architecture decision and consequences
+- [x] **VERIFY-03**: All v1 requirements mapped to phases with success criteria
+- [x] **VERIFY-04**: ADR-009 documents architecture decision and consequences
 
 ## v2 Requirements
 
@@ -71,29 +71,29 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ## Traceability
 
-| Requirement | Phase   | Status  |
-| ----------- | ------- | ------- |
-| PLAN-01     | Phase 1 | Pending |
-| PLAN-02     | Phase 1 | Pending |
-| PLAN-03     | Phase 1 | Pending |
-| PLAN-04     | Phase 1 | Pending |
-| PLAN-05     | Phase 1 | Pending |
-| DOC-01      | Phase 2 | Pending |
-| DOC-02      | Phase 2 | Pending |
-| DOC-03      | Phase 1 | Pending |
-| DOC-04      | Phase 2 | Pending |
-| EXEC-01     | Phase 2 | Pending |
-| EXEC-02     | Phase 2 | Pending |
-| EXEC-03     | Phase 3 | Pending |
-| EXEC-04     | Phase 3 | Pending |
-| TRACK-01    | Phase 2 | Pending |
-| TRACK-02    | Phase 2 | Pending |
-| TRACK-03    | Phase 2 | Pending |
-| TRACK-04    | Phase 3 | Pending |
-| VERIFY-01   | Phase 3 | Pending |
-| VERIFY-02   | Phase 3 | Pending |
-| VERIFY-03   | Phase 3 | Pending |
-| VERIFY-04   | Phase 1 | Pending |
+| Requirement | Phase   | Status      |
+| ----------- | ------- | ----------- |
+| PLAN-01     | Phase 1 | Complete    |
+| PLAN-02     | Phase 1 | Complete    |
+| PLAN-03     | Phase 1 | Complete    |
+| PLAN-04     | Phase 1 | Complete    |
+| PLAN-05     | Phase 1 | Complete    |
+| DOC-01      | Phase 2 | Complete    |
+| DOC-02      | Phase 2 | Complete    |
+| DOC-03      | Phase 1 | Complete    |
+| DOC-04      | Phase 2 | Complete    |
+| EXEC-01     | Phase 2 | In Progress |
+| EXEC-02     | Phase 2 | In Progress |
+| EXEC-03     | Phase 3 | Pending     |
+| EXEC-04     | Phase 3 | Pending     |
+| TRACK-01    | Phase 2 | Complete    |
+| TRACK-02    | Phase 2 | Pending     |
+| TRACK-03    | Phase 2 | Pending     |
+| TRACK-04    | Phase 3 | Pending     |
+| VERIFY-01   | Phase 3 | Pending     |
+| VERIFY-02   | Phase 3 | Pending     |
+| VERIFY-03   | Phase 1 | Complete    |
+| VERIFY-04   | Phase 1 | Complete    |
 
 **Coverage:**
 
