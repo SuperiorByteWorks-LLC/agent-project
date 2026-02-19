@@ -24,22 +24,22 @@ Requirements for initial integration release. Each maps to roadmap phases.
 
 ### Execution Layer Integration
 
-- [ ] **EXEC-01**: GSD phases spawn template 14-step workflow agents
-- [ ] **EXEC-02**: AGENTS.md remains canonical entrypoint for all agent work
-- [ ] **EXEC-03**: Local CI runner (`./scripts/ci-local.sh`) validates phase deliverables
-- [ ] **EXEC-04**: CrewAI review system processes phase outputs
+- [x] **EXEC-01**: GSD phases spawn template 14-step workflow agents
+- [x] **EXEC-02**: AGENTS.md remains canonical entrypoint for all agent work
+- [x] **EXEC-03**: Local CI runner (`./scripts/ci-local.sh`) validates phase deliverables
+- [x] **EXEC-04**: CrewAI review system processes phase outputs
 
 ### Project Tracking Integration
 
 - [x] **TRACK-01**: Kanban boards reference active GSD phase and REQ-IDs
-- [ ] **TRACK-02**: PR records document phase deliverables with traceability
-- [ ] **TRACK-03**: Issue records track blockers and decisions
-- [ ] **TRACK-04**: Source-of-truth sync updates both `.planning/` and `docs/project/`
+- [x] **TRACK-02**: PR records document phase deliverables with traceability
+- [x] **TRACK-03**: Issue records track blockers and decisions (demonstrated)
+- [x] **TRACK-04**: Source-of-truth sync updates both `.planning/` and `docs/project/`
 
 ### Verification and Guide
 
-- [ ] **VERIFY-01**: Integration tested end-to-end on experimental branch
-- [ ] **VERIFY-02**: Comprehensive integration guide created with examples
+- [x] **VERIFY-01**: Integration tested end-to-end on experimental branch
+- [x] **VERIFY-02**: Comprehensive integration guide created with examples
 - [x] **VERIFY-03**: All v1 requirements mapped to phases with success criteria
 - [x] **VERIFY-04**: ADR-009 documents architecture decision and consequences
 
@@ -71,29 +71,29 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ## Traceability
 
-| Requirement | Phase   | Status      |
-| ----------- | ------- | ----------- |
-| PLAN-01     | Phase 1 | Complete    |
-| PLAN-02     | Phase 1 | Complete    |
-| PLAN-03     | Phase 1 | Complete    |
-| PLAN-04     | Phase 1 | Complete    |
-| PLAN-05     | Phase 1 | Complete    |
-| DOC-01      | Phase 2 | Complete    |
-| DOC-02      | Phase 2 | Complete    |
-| DOC-03      | Phase 1 | Complete    |
-| DOC-04      | Phase 2 | Complete    |
-| EXEC-01     | Phase 2 | In Progress |
-| EXEC-02     | Phase 2 | In Progress |
-| EXEC-03     | Phase 3 | Pending     |
-| EXEC-04     | Phase 3 | Pending     |
-| TRACK-01    | Phase 2 | Complete    |
-| TRACK-02    | Phase 2 | Pending     |
-| TRACK-03    | Phase 2 | Pending     |
-| TRACK-04    | Phase 3 | Pending     |
-| VERIFY-01   | Phase 3 | Pending     |
-| VERIFY-02   | Phase 3 | Pending     |
-| VERIFY-03   | Phase 1 | Complete    |
-| VERIFY-04   | Phase 1 | Complete    |
+| Requirement | Phase   | Status   |
+| ----------- | ------- | -------- |
+| PLAN-01     | Phase 1 | Complete |
+| PLAN-02     | Phase 1 | Complete |
+| PLAN-03     | Phase 1 | Complete |
+| PLAN-04     | Phase 1 | Complete |
+| PLAN-05     | Phase 1 | Complete |
+| DOC-01      | Phase 2 | Complete |
+| DOC-02      | Phase 2 | Complete |
+| DOC-03      | Phase 1 | Complete |
+| DOC-04      | Phase 2 | Complete |
+| EXEC-01     | Phase 2 | Complete |
+| EXEC-02     | Phase 2 | Complete |
+| EXEC-03     | Phase 3 | Complete |
+| EXEC-04     | Phase 3 | Complete |
+| TRACK-01    | Phase 2 | Complete |
+| TRACK-02    | Phase 2 | Complete |
+| TRACK-03    | Phase 2 | Complete |
+| TRACK-04    | Phase 3 | Complete |
+| VERIFY-01   | Phase 3 | Complete |
+| VERIFY-02   | Phase 3 | Complete |
+| VERIFY-03   | Phase 1 | Complete |
+| VERIFY-04   | Phase 1 | Complete |
 
 **Coverage:**
 
@@ -104,4 +104,4 @@ Deferred to future release. Tracked but not in current roadmap.
 ---
 
 _Requirements defined: 2026-02-19_
-_Last updated: 2026-02-19 after initial definition_
+_Last updated: 2026-02-19 — All 21 v1 requirements complete_
