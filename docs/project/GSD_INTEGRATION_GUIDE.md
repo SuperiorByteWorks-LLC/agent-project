@@ -585,6 +585,331 @@ Use this to verify your integration is working:
 
 ---
 
+## 🤖 Complete Agent Ecosystem
+
+This integration is part of a comprehensive agent development ecosystem:
+
+### Core Components
+
+```mermaid
+flowchart TB
+    accTitle: Complete Agent Ecosystem Architecture
+    accDescr: Shows how OhMyOpenCode, OpenCode, GSD, scientific tools, and custom skills work together.
+
+    subgraph Runtime["⚡ Runtime Environment"]
+        direction TB
+        OpenCode["OpenCode CLI"]
+        Claude["Claude Code / Claude Desktop"]
+    end
+
+    subgraph Framework["🔧 Orchestration Framework"]
+        direction TB
+        OhMyOpenCode["OhMyOpenCode<br/>Agent System"]
+        GSD["GSD<br/>Get Shit Done"]
+        Template["Agent-Project Template"]
+    end
+
+    subgraph SpecializedAgents["🎯 Specialized Agents"]
+        direction TB
+        Explore["Explore Agent<br/>Codebase patterns"]
+        Librarian["Librarian Agent<br/>Documentation"]
+        Oracle["Oracle Agent<br/>Architecture decisions"]
+        Metis["Metis Agent<br/>Pre-planning analysis"]
+        Momus["Momus Agent<br/>Plan verification"]
+    end
+
+    subgraph ScientificTools["🔬 Scientific Tools"]
+        direction TB
+        ScientificTools2["Claude-Scientific-Tools"]
+        ScientificWriter["Claude-Scientific-Writer"]
+        Research["Research Lookup"]
+        Literature["Literature Review"]
+        Hypothesis["Hypothesis Generation"]
+    end
+
+    subgraph CustomSkills["🛠️ Custom Skills"]
+        direction TB
+        GitMaster["Git Master"]
+        ClinicalReports["Clinical Reports"]
+        MDToPDF["MD-to-PDF"]
+        Citations["Citation Management"]
+        PeerReview["Peer Review"]
+        LatexPosters["LaTeX Posters"]
+    end
+
+    OpenCode --> OhMyOpenCode
+    Claude --> OhMyOpenCode
+    OhMyOpenCode --> GSD
+    OhMyOpenCode --> Template
+    GSD --> Template
+    OhMyOpenCode --> Explore
+    OhMyOpenCode --> Librarian
+    OhMyOpenCode --> Oracle
+    OhMyOpenCode --> Metis
+    OhMyOpenCode --> Momus
+    OhMyOpenCode --> ScientificTools2
+    OhMyOpenCode --> ScientificWriter
+    OhMyOpenCode --> GitMaster
+    OhMyOpenCode --> ClinicalReports
+    OhMyOpenCode --> MDToPDF
+
+    classDef runtime fill:#dbeafe,stroke:#2563eb,stroke-width:2px,color:#1e3a5f
+    classDef framework fill:#dcfce7,stroke:#16a34a,stroke-width:2px,color:#14532d
+    classDef agents fill:#fef3c7,stroke:#d97706,stroke-width:2px,color:#78350f
+    classDef scientific fill:#fce7f3,stroke:#db2777,stroke-width:2px,color:#831843
+    classDef skills fill:#f3f4f6,stroke:#6b7280,stroke-width:2px,color:#374151
+
+    class Runtime,OpenCode,Claude runtime
+    class Framework,OhMyOpenCode,GSD,Template framework
+    class SpecializedAgents,Explore,Librarian,Oracle,Metis,Momus agents
+    class ScientificTools,ScientificTools2,ScientificWriter,Research,Literature,Hypothesis scientific
+    class CustomSkills,GitMaster,ClinicalReports,MDToPDF,Citations,PeerReview,LatexPosters skills
+```
+
+### Component Breakdown
+
+#### 1. **OpenCode / Claude Code** — The Runtime
+
+The CLI and IDE environment where agents execute:
+
+- **OpenCode CLI** — Command-line interface for agent operations
+- **Claude Code** — IDE integration (VS Code, etc.)
+- **Claude Desktop** — Web interface for agent interactions
+
+These provide the execution environment; the frameworks provide the intelligence.
+
+#### 2. **OhMyOpenCode** — The Agent Framework
+
+The orchestration layer that manages specialized agents:
+
+| Agent         | Purpose                    | When to Use                               |
+| ------------- | -------------------------- | ----------------------------------------- |
+| **Explore**   | Contextual codebase search | Finding patterns, understanding structure |
+| **Librarian** | External research          | Docs, GitHub examples, best practices     |
+| **Oracle**    | Architecture decisions     | Complex tradeoffs, debugging, review      |
+| **Metis**     | Pre-planning analysis      | Scope clarification, ambiguity detection  |
+| **Momus**     | Plan verification          | Quality gates, completeness checks        |
+
+**Usage pattern:**
+
+```
+OhMyOpenCode spawns appropriate agents
+  → Agents run in parallel (background)
+  → Results synthesized
+  → Decision made
+  → Action taken
+```
+
+#### 3. **GSD + Template** — Project Management
+
+This integration you just set up:
+
+- **GSD** — Hierarchical planning, phase execution
+- **Template** — Documentation standards, 14-step workflow
+
+Together they provide end-to-end project management from vision to shipped code.
+
+#### 4. **K-Dense Scientific Tools** — Research & Analysis
+
+Specialized tools for scientific and research work:
+
+| Tool                         | Purpose             | Best For                        |
+| ---------------------------- | ------------------- | ------------------------------- |
+| **Claude-Scientific-Tools**  | Research execution  | Data analysis, method selection |
+| **Claude-Scientific-Writer** | Academic writing    | Papers, grants, reports         |
+| **Research Lookup**          | Current information | Latest papers, documentation    |
+| **Literature Review**        | Systematic reviews  | Comprehensive topic surveys     |
+| **Hypothesis Generation**    | Scientific method   | Testable hypotheses from data   |
+
+**When to use:** Research projects, academic work, data analysis, scientific writing.
+
+#### 5. **Custom Skills** — Specialized Capabilities
+
+Your installed skills extend agent capabilities:
+
+| Skill                   | Purpose                 | Domain          |
+| ----------------------- | ----------------------- | --------------- |
+| **Git Master**          | Advanced git operations | All development |
+| **Clinical Reports**    | Medical documentation   | Healthcare      |
+| **MD-to-PDF**           | Document conversion     | Publishing      |
+| **Citation Management** | Academic references     | Research        |
+| **Peer Review**         | Manuscript review       | Academic        |
+| **LaTeX Posters**       | Academic posters        | Conferences     |
+| **Scientific Slides**   | Presentation creation   | Research        |
+| **Research Grants**     | Grant proposals         | Funding         |
+| **Infographics**        | Visual communication    | All domains     |
+
+### Ecosystem Integration
+
+#### How They Work Together
+
+```mermaid
+sequenceDiagram
+    accTitle: Complete Workflow with Full Ecosystem
+    accDescr: Shows how all components collaborate on a complex project.
+
+    actor User
+    participant OC as OpenCode
+    participant OMO as OhMyOpenCode
+    participant GSD as GSD
+    participant Agents as Specialized Agents
+    participant Sci as Scientific Tools
+    participant Skills as Custom Skills
+    participant Template as Template
+
+    User->>OC: Start complex research project
+    OC->>OMO: Initialize framework
+    OMO->>GSD: /gsd-new-project
+
+    GSD->>Agents: Spawn Librarian (research domain)
+    GSD->>Sci: Research Lookup (latest papers)
+    Agents-->>GSD: Domain knowledge
+    Sci-->>GSD: Current research
+
+    GSD->>GSD: Create PROJECT.md, REQUIREMENTS.md
+
+    User->>GSD: /gsd-plan-phase 1
+    GSD->>OMO: Spawn Oracle (architecture)
+    OMO->>Agents: Oracle consults on design
+    Agents-->>OMO: Architecture recommendations
+    OMO-->>GSD: Design approved
+
+    GSD->>Sci: Literature Review (state of art)
+    Sci-->>GSD: Research context
+
+    GSD->>GSD: Create detailed phase plan
+
+    User->>GSD: /gsd-execute-phase 1
+    GSD->>Template: Spawn execution agents
+    Template->>Skills: Git Master (branch, commit)
+    Template->>Sci: Scientific Writer (documentation)
+    Template->>Skills: Citation Management (references)
+
+    Template->>OC: Run ./scripts/ci-local.sh
+    OC-->>Template: CI passes
+
+    Template->>GSD: Phase complete
+    GSD->>OMO: Spawn Momus (verification)
+    OMO->>Agents: Verify quality
+    Agents-->>OMO: Approval
+
+    GSD-->>User: Phase 1 complete!
+```
+
+### Use Case Examples
+
+#### Example 1: Academic Research Project
+
+**Tools used:** GSD + Template + Scientific Writer + Literature Review + Citation Management
+
+```
+/gsd-new-project
+  → "I need to write a paper on climate modeling"
+
+/gsd-research-phase 1
+  → Spawns 4 researchers
+  → Literature Review creates RESEARCH.md
+  → Current state of climate modeling documented
+
+/gsd-plan-phase 1
+  → Plan: Literature review, methodology, results
+
+/gsd-execute-phase 1
+  → Scientific Writer drafts sections
+  → Citation Management handles references
+  → Template ensures proper academic formatting
+
+/gsd-verify-work 1
+  → Peer Review skill validates methodology
+```
+
+#### Example 2: Clinical Software Development
+
+**Tools used:** GSD + Template + Clinical Reports + Git Master + Oracle
+
+```
+/gsd-new-project
+  → "Build HIPAA-compliant patient portal"
+
+/gsd-plan-phase 1
+  → Oracle consults on security architecture
+  → Compliance requirements mapped
+
+/gsd-execute-phase 1
+  → Clinical Reports for documentation
+  → Git Master for secure commit practices
+  → Template 14-step with security checkpoints
+```
+
+#### Example 3: Conference Presentation
+
+**Tools used:** Scientific Slides + LaTeX Posters + MD-to-PDF
+
+```
+/gsd-quick
+  → "Create poster for NeurIPS"
+
+  → Research Lookup finds examples
+  → Scientific Slides creates structure
+  → LaTeX Posters generates template
+  → MD-to-PDF converts to PDF
+```
+
+### Configuration for Ecosystem
+
+#### `.planning/config.json` with Full Ecosystem
+
+```json
+{
+  "mode": "yolo",
+  "depth": "comprehensive",
+  "parallelization": true,
+  "commit_docs": true,
+  "model_profile": "quality",
+  "workflow": {
+    "research": true,
+    "plan_check": true,
+    "verifier": true,
+    "auto_advance": false
+  },
+  "ecosystem": {
+    "ohmyopencodes_agents": {
+      "explore": true,
+      "librarian": true,
+      "oracle": true,
+      "metis": true,
+      "momus": true
+    },
+    "scientific_tools": {
+      "research_lookup": true,
+      "literature_review": true,
+      "scientific_writer": true,
+      "hypothesis_generation": true
+    },
+    "custom_skills": ["git-master", "citation-management", "md-to-pdf"]
+  }
+}
+```
+
+### Best Practices for Ecosystem Use
+
+1. **Start Simple** — Use basic GSD + Template first
+2. **Add Scientific Tools** — When doing research/analysis work
+3. **Invoke Specialized Agents** — For complex decisions (Oracle), deep research (Librarian)
+4. **Leverage Custom Skills** — Match skills to your domain (Clinical, Academic, etc.)
+5. **Parallel Execution** — Let OhMyOpenCode spawn multiple agents simultaneously
+
+### Resource Management
+
+With full ecosystem active:
+
+- **Token budget** increases (more agents = more context)
+- **Use `/clear`** between major phases
+- **GSD STATE.md** tracks context across sessions
+- **Background agents** run while you continue working
+
+---
+
 ## 🎉 Summary
 
 **You now have:**
