@@ -193,11 +193,13 @@ STATE.md                             ↓
 
 1. **Read the guide:** [`docs/project/GSD_INTEGRATION_GUIDE.md`](../../docs/project/GSD_INTEGRATION_GUIDE.md)
 2. **Try the workflow:**
+
    ```bash
    /gsd-new-project
    /gsd-plan-phase 1
    /gsd-execute-phase 1
    ```
+
 3. **Track progress:** Update kanban boards with GSD phase context
 4. **Iterate:** Use `/gsd-progress` to check status
 

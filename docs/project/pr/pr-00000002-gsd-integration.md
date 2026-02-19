@@ -233,6 +233,7 @@ See [GSD Integration Guide](../GSD_INTEGRATION_GUIDE.md) for complete instructio
 2. **Approve** — Mark ready for merge
 3. **Merge** — Integration complete
 4. **Use** — Start using unified workflow:
+
    ```
    /gsd-new-project → /gsd-plan-phase → /gsd-execute-phase
    ```
