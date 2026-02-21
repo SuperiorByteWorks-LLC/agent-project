@@ -83,11 +83,12 @@ cython_debug/
 .crewai-job-output/
 .crewai/output/
 
-# Sisyphus (keep plans, ignore execution artifacts)
+# Sisyphus Agent System (keep plans, ignore execution artifacts)
 .sisyphus/output/
 .sisyphus/cache/
 .sisyphus/temp/
 .sisyphus/*.log
+.sisyphus/job-output/
 
 # Agent memory (runtime only - versioned memory IS tracked)
 # .crewai/memory/memory.json — tracked
@@ -360,3 +361,33 @@ compliance-reports/
 # SBOMs (generate on build, don't track)
 *.sbom.json
 *.sbom.xml
+
+# Secret scanning results
+.secrets-scan/
+.secretscan/
+.secrets.baseline
+
+# Trivy/Grype vulnerability scans
+.trivy/
+.grype/
+*.vuln.json
+
+# Gitleaks
+.gitleaks/
+
+# Detect-secrets
+.secrets/
+
+# Bandit (Python security)
+.bandit/
+
+# Semgrep
+.semgrep/
+semgrep-results/
+
+# Dependency check
+dependency-check/
+
+# Snyk
+.snyk/
+.dcignore
