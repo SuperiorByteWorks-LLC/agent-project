@@ -6,6 +6,20 @@
 
 ## Before you do anything
 
+### 0. Load the Agent OS stack (do this first, always)
+
+This repo uses a 5-layer Agent OS stack. Load in this order:
+
+| # | File | What it is | Always load? |
+|---|------|-----------|-------------|
+| 1 | [`SOUL.md`](SOUL.md) | WHO you are — identity and values | ✅ Yes |
+| 2 | `AGENTS.md` (this file) | HOW you work — behavioral rules | ✅ Yes (you're reading it) |
+| 3 | [`TOOLS.md`](TOOLS.md) | WHAT you can execute — tool inventory | ✅ Yes |
+| 4 | [`skills/_core/`](skills/_core/) | Foundation alignment + docs standard | ✅ Yes |
+| 5 | [`skills/`](skills/) | What you know — on-demand by task | On demand |
+
+Full stack design: **[`AGENT-OS.md`](AGENT-OS.md)**
+
 ### 1. Read your operating instructions
 
 Open **[agentic/instructions.md](agentic/instructions.md)** — it tells you what files to load, in what order, and based on what task type.
@@ -53,6 +67,10 @@ You **MUST** read and follow the style guides. These are not optional — they d
 
 | Need                                  | File                                                                           |
 | ------------------------------------- | ------------------------------------------------------------------------------ |
+| Full stack design (5 layers)          | [AGENT-OS.md](AGENT-OS.md)                                                     |
+| Who I am / my values | [SOUL.md](SOUL.md) |
+| What tools I can use | [TOOLS.md](TOOLS.md) |
+| Skill tree navigation                 | [skills/AGENTS.md](skills/AGENTS.md)                                           |
 | What can I do? What must I ask about? | [agentic/agentic_coding.md](agentic/agentic_coding.md)                         |
 | Step-by-step workflow                 | [agentic/workflow_guide.md](agentic/workflow_guide.md)                         |
 | Code style, commits, PRs              | [agentic/contribute_standards.md](agentic/contribute_standards.md)             |
@@ -73,6 +91,12 @@ You **MUST** read and follow the style guides. These are not optional — they d
 ## Directory overview
 
 ```text
+soul.md                         → Layer 1: Agent identity and values (WHO)
+AGENTS.md                       → Layer 2: Behavioral rules (HOW) ← you are here
+tools.md                        → Layer 3: Tool inventory (WHAT can execute)
+AGENT-OS.md                     → Full 5-layer stack design
+SKILL-TREE.md                   → Skill tree architecture design
+skills/                         → Layer 4+5: Knowledge and persona (on-demand)
 agentic/                        → Agent instructions, style guides, templates, ADRs
 docs/pr/                        → Pull request records (pr-NNNNNNNN.md)
 docs/issues/                    → Issue records (issue-NNNNNNNN.md)

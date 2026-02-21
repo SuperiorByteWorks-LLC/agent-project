@@ -1,0 +1,12 @@
+---
+skill: clarity-gate
+canonical: ../../canonical/clarity-gate/SKILL.md
+description: >
+  Pre-ingestion verification for epistemic quality in RAG systems with 9-point verification and Two-Round HITL workflow
+tags:
+  - skill
+domain: [general]
+upstream: 
+license: MIT
+load_frequency: medium
+---

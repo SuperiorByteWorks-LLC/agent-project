@@ -1,0 +1,63 @@
+flowchart LR
+    subgraph Foundation["Foundation Layer"]
+        MM[markdown-mermaid-writing]
+    end
+    
+    subgraph Standards["Standards Propagation"]
+        MD[markdown style guide]
+        MG[mermaid style guide]
+        DT[23 diagram types]
+        TM[9 templates]
+    end
+    
+    subgraph Science["Science Domain"]
+        SW[scientific-writing]
+        LR[literature-review]
+        SS[scientific-schematics]
+        SR[scientific-slides]
+    end
+    
+    subgraph Engineering["Engineering Domain"]
+        AD[architecture docs]
+        DS[database skills]
+        API[API integration]
+        INF[infrastructure docs]
+    end
+    
+    subgraph Analysis["Analysis Skills"]
+        VIS[visualization]
+        STAT[statistical analysis]
+        ML[machine learning]
+    end
+    
+    subgraph Future["Future Categories"]
+        FC1[...]
+        FC2[...]
+    end
+    
+    MM --> MD
+    MM --> MG
+    MM --> DT
+    MM --> TM
+    
+    MD --> SW
+    MD --> AD
+    MD --> DS
+    MG --> SS
+    MG --> SR
+    DT --> VIS
+    DT --> STAT
+    DT --> ML
+    TM --> API
+    TM --> INF
+    
+    SW --> FC1
+    AD --> FC2
+    
+    style MM fill:#dbeafe,stroke:#2563eb,stroke-width:3px
+    style Foundation fill:#f0f9ff,stroke:#38bdf8
+    style Standards fill:#fef9c3,stroke:#ca8a04
+    style Science fill:#dcfce7,stroke:#16a34a
+    style Engineering fill:#fce7f3,stroke:#db2777
+    style Analysis fill:#ede9fe,stroke:#7c3aed
+    style Future fill:#f3f4f6,stroke:#6b7280,stroke-dasharray: 5 5

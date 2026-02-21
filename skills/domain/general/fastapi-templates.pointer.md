@@ -1,0 +1,12 @@
+---
+skill: fastapi-templates
+canonical: ../../canonical/fastapi-templates/SKILL.md
+description: >
+  Create production-ready FastAPI projects with async patterns, dependency injection, and comprehensive error handling. Use when building new FastAPI applications or setting up backend API projects.
+tags:
+  - skill
+domain: [general]
+upstream: 
+license: MIT
+load_frequency: medium
+---

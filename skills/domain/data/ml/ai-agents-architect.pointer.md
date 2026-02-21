@@ -1,0 +1,12 @@
+---
+skill: ai-agents-architect
+canonical: ../../../canonical/ai-agents-architect/SKILL.md
+description: >
+  Expert in designing and building autonomous AI agents. Masters tool use, memory systems, planning strategies, and multi-agent orchestration. Use when: build agent, AI agent, autonomous agent, tool ...
+tags:
+  - skill
+domain: [data/ml]
+upstream: 
+license: MIT
+load_frequency: medium
+---

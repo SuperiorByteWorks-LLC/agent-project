@@ -1,0 +1,12 @@
+---
+skill: graphql
+canonical: ../../canonical/graphql/SKILL.md
+description: >
+  GraphQL gives clients exactly the data they need - no more, no less. One endpoint, typed schema, introspection. But the flexibility that makes it powerful also makes it dangerous. Without proper co...
+tags:
+  - skill
+domain: [data]
+upstream: 
+license: MIT
+load_frequency: medium
+---
