@@ -1,65 +1,41 @@
-# ===========================
-# Node / pnpm
-# ===========================
+# ============================================================================
+# .gitignore — 2026 Standards
+# ============================================================================
+# Updated for modern AI/Agent workflows, cloud runtimes, and security
+# Last updated: 2026-02-21
+# ============================================================================
+
+# ============================================================================
+# Node.js / pnpm / npm / yarn
+# ============================================================================
 node_modules/
 .pnpm-store/
 .pnpm-debug.log
-
-# ===========================
-# Environment variables
-# ===========================
-.env
-.env.local
-.env.*.local
-
-# ===========================
-# OS files
-# ===========================
-.DS_Store
-Thumbs.db
-Desktop.ini
-._*
-
-# ===========================
-# IDE / Editor
-# ===========================
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-*.sublime-project
-*.sublime-workspace
-
-# ===========================
-# Logs
-# ===========================
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
 
-# ===========================
-# Build outputs
-# ===========================
-dist/
-build/
-.next/
-out/
-.wrangler/
-.mf/
+# ============================================================================
+# Bun
+# ============================================================================
+bun.lockb
+bunfig.toml
 
-# ===========================
-# Jupyter Notebooks
-# ===========================
-.ipynb_checkpoints/
-notebooks/.ipynb_checkpoints/
-notebooks/**/.ipynb_checkpoints/
+# ============================================================================
+# Deno
+# ============================================================================
+deno.lock
+.deno/
+deps.ts
 
-# ===========================
+# ============================================================================
 # Python
-# ===========================
+# ============================================================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -71,6 +47,10 @@ ENV/
 .venv/
 pip-log.txt
 pip-delete-this-directory.txt
+.uv/
+uv.lock
+
+# Testing & coverage
 .pytest_cache/
 .coverage
 htmlcov/
@@ -78,11 +58,20 @@ htmlcov/
 .eggs/
 .ruff_cache/
 .mypy_cache/
+.dmypy.json
+.pyre/
+.pytype/
+cython_debug/
 
-# ===========================
-# CrewAI runtime artifacts
-# ===========================
-# Workspace files generated during reviews
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ============================================================================
+# AI / Agent / LLM Artifacts
+# ============================================================================
+
+# CrewAI runtime outputs
 .crewai/workspace/*.txt
 .crewai/workspace/*.json
 .crewai/workspace/*.md
@@ -91,30 +80,283 @@ htmlcov/
 .crewai/workspace/trace/*.json
 .crewai/*.log
 .crewai/ci_summary.json
-.crewai/workspace/trace/
+.crewai-job-output/
+.crewai/output/
 
-# Keep workspace directory structure
-!.crewai/workspace/.gitkeep
-!.crewai/workspace/trace/.gitkeep
+# Sisyphus (keep plans, ignore execution artifacts)
+.sisyphus/output/
+.sisyphus/cache/
+.sisyphus/temp/
+.sisyphus/*.log
 
-# Memory files ARE tracked (version-controlled review memory)
-# .crewai/memory/memory.json     — tracked
+# Agent memory (runtime only - versioned memory IS tracked)
+# .crewai/memory/memory.json — tracked
 # .crewai/memory/suppressions.json — tracked
 
-# ===========================
-# Test / Coverage
-# ===========================
+# LLM-generated artifacts
+*.llm.md
+*.ai.md
+prompt-*.txt
+completion-*.txt
+
+# Vector stores & embeddings
+.vectordb/
+.chroma/
+.embeddings/
+persist/
+
+# ============================================================================
+# Environment & Secrets
+# ============================================================================
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+!.env.example
+!.env.template
+
+# Secrets & credentials
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+config/secrets*
+
+# API keys & tokens
+*.apikey
+*.token
+.tokens/
+auth.json
+auth.yaml
+auth.yml
+
+# ============================================================================
+# Cloud / Edge / Serverless
+# ============================================================================
+
+# Wrangler (Cloudflare)
+.wrangler/
+.wrangler.toml
+wrangler-local-state/
+
+# Vercel
+.vercel
+.now
+
+# Netlify
+.netlify
+
+# AWS
+.aws/
+aws-credentials.json
+
+# Azure
+.azure/
+
+# GCP
+.gcloud/
+*.credentials.json
+
+# Deno Deploy / Edge
+.deno-deploy/
+
+# Supabase
+.supabase/
+
+# Fly.io
+.fly/
+fly.toml
+
+# Railway
+.railway/
+
+# ============================================================================
+# Build Outputs & Artifacts
+# ============================================================================
+dist/
+build/
+.next/
+out/
+.nuxt/
+.output/
+.svelte-kit/
+.vite/
+.rollup.cache/
+.parcel-cache/
+
+# TypeScript
+*.tsbuildinfo
+
+# ============================================================================
+# Database
+# ============================================================================
+*.db
+*.sqlite
+*.sqlite3
+*.db-shm
+*.db-wal
+
+# ============================================================================
+# Logs
+# ============================================================================
+*.log
+logs/
+log/
+
+# ============================================================================
+# OS Files
+# ============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================================================
+# IDE / Editor
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Cursor
+.cursor/
+.cursorrules
+
+# Windsurf
+.windsurf/
+
+# Zed
+.zed/
+
+# ============================================================================
+# Package Managers
+# ============================================================================
+package-lock.json
+yarn.lock
+.pnpm-lock.yaml
+
+# Keep pnpm-lock for reproducibility
+!pnpm-lock.yaml
+
+# ============================================================================
+# Testing
+# ============================================================================
 coverage/
 .nyc_output/
 junit.xml
 test-results/
+playwright-report/
+test-results/
 
-# ===========================
-# Misc
-# ===========================
+# ============================================================================
+# Documentation Build
+# ============================================================================
+_site/
+site/
+mkdocs-site/
+.docusaurus/
+
+# ============================================================================
+# Temporary Files
+# ============================================================================
 *.tgz
 *.tar.gz
 *.zip
 .cache/
 tmp/
 temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# ============================================================================
+# Keep These (tracked files)
+# ============================================================================
+
+# Workspace directory structure
+!.crewai/workspace/.gitkeep
+!.crewai/workspace/trace/.gitkeep
+
+# Sisyphus plans ARE tracked
+!.sisyphus/plans/
+!.sisyphus/plans/**/.gitkeep
+
+# Documentation templates
+!agentic/markdown_templates/
+!agentic/mermaid_diagrams/
+
+# Core standards ARE tracked
+!agentic/adr/
+!docs/standards/
+!skills/_core/
+!skills/bundles/
+
+# ============================================================================
+# Project Specific
+# ============================================================================
+
+# Skill tree build artifacts (regenerated)
+skills/INDEX.json
+prompts/INDEX.json
+
+# But keep source files
+!skills/CATALOG.md
+!skills/AGENTS.md
+!prompts/CATALOG.md
+!prompts/AGENTS.md
+
+# Local development configs
+.vscode/settings.local.json
+.idea/workspace.xml
+
+# Session files
+*.session
+.sessions/
+
+# Audio/Video processing (large files)
+*.wav
+*.mp3
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Model files (large binaries)
+*.gguf
+*.bin
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+
+# ============================================================================
+# Security & Compliance
+# ============================================================================
+
+# Audit reports
+audit/
+audit-reports/
+*.audit.json
+
+# Compliance scans
+.compliance/
+compliance-reports/
+
+# SBOMs (generate on build, don't track)
+*.sbom.json
+*.sbom.xml
