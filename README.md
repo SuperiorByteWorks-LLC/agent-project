@@ -9,7 +9,7 @@
 The Agent Project is a **complete AI agent infrastructure** that solves three hard problems:
 
 1. **Identity & Values** — Who the agent is and what it won't do (SOUL)
-2. **Knowledge Organization** — How to manage 1000+ skills without losing them (Skill Tree)
+2. **Knowledge Organization** — How to manage millions of skills without losing them (Skill Tree Architecture)
 3. **Safety & Quality** — Automatic detection and quarantine of harmful content (Jail Systems)
 
 Instead of scattered prompt files and flat skill directories, we use a **5-layer Agent OS** with Yahoo-style navigation, pointer-based single source of truth, and automatic decontamination pipelines.
@@ -24,13 +24,13 @@ flowchart TB
     accDescr: Five layers from identity at the top to role activation at the bottom, each constraining the layers below
 
     soul["🪨 Layer 1 — SOUL.md<br/>WHO the agent is<br/>Identity, values, ethics<br/>Loaded first, never changes"]
-    
+
     agents["📋 Layer 2 — AGENTS.md<br/>HOW the agent works<br/>Behavioral rules, workflows<br/>Inheritable cascade"]
-    
+
     tools["🔧 Layer 3 — TOOLS.md<br/>WHAT the agent can execute<br/>MCP servers, CLI, APIs<br/>Environment-specific"]
-    
+
     skills["📚 Layer 4 — skills/<br/>WHAT the agent knows<br/>Hierarchical knowledge base<br/>On-demand loading"]
-    
+
     prompts["🎭 Layer 5 — prompts/<br/>WHAT ROLE the agent plays<br/>Persona activation<br/>Optional context"]
 
     soul --> agents --> tools --> skills --> prompts
@@ -54,12 +54,12 @@ flowchart TB
 
 Defines who the agent is, what it values, and its ethical boundaries. This loads before everything else and **cannot be overridden**.
 
-| Aspect | Description |
-|--------|-------------|
-| **Identity** | Technically precise, pragmatic senior engineer |
-| **Core Values** | Precision over speed, honesty over comfort, evidence over assumption |
+| Aspect                 | Description                                                                       |
+| ---------------------- | --------------------------------------------------------------------------------- |
+| **Identity**           | Technically precise, pragmatic senior engineer                                    |
+| **Core Values**        | Precision over speed, honesty over comfort, evidence over assumption              |
 | **Ethical Boundaries** | Won't use stolen credentials, won't weaponize information, won't engage with CSAM |
-| **Information Ethics** | Respects sensitivity lifecycle: active → decaying → public → eternal |
+| **Information Ethics** | Respects sensitivity lifecycle: active → decaying → public → eternal              |
 
 > **Key Principle:** Information moves through phases. Once it leaves the vault and enters the commons, we treat it as public record.
 
@@ -98,12 +98,12 @@ flowchart TD
 
 What the agent can execute — MCP servers, CLI tools, APIs, environment capabilities.
 
-| Category | Examples |
-|----------|----------|
-| **Browser** | Playwright for web automation, screenshots, testing |
-| **Code** | LSP for navigation, AST-grep for refactoring, diagnostics |
-| **Search** | Web search (Exa), GitHub search, Context7 for docs |
-| **AI** | Oracle for architecture, Librarian for research, Subagents for delegation |
+| Category    | Examples                                                                  |
+| ----------- | ------------------------------------------------------------------------- |
+| **Browser** | Playwright for web automation, screenshots, testing                       |
+| **Code**    | LSP for navigation, AST-grep for refactoring, diagnostics                 |
+| **Search**  | Web search (Exa), GitHub search, Context7 for docs                        |
+| **AI**      | Oracle for architecture, Librarian for research, Subagents for delegation |
 
 Tools are **declarative** — the agent reads TOOLS.md to understand what's available, then uses them as needed.
 
@@ -119,13 +119,13 @@ flowchart LR
     accDescr: Three ways to find skills: drill-down navigation, grep index, or follow pointers
 
     User([User/Agent])
-    
+
     subgraph "Navigation Layer"
         Domain["skills/domain/<domain>/"]
         Subdomain[".../<subdomain>/"]
         Pointer["<skill>.pointer.md"]
     end
-    
+
     subgraph "Storage Layer"
         Canonical["skills/canonical/<source>/<skill>/SKILL.md"]
         Index["skills/INDEX.json<br/>(grep target)"]
@@ -146,6 +146,7 @@ flowchart LR
 ```
 
 **Key Features:**
+
 - **Yahoo Directory:** Drill down `domain/science/writing/`
 - **Grep Index:** `jq '.[] | select(.tags[] | contains("python"))' skills/INDEX.json`
 - **Pointer SSoT:** Every skill has one canonical path, no duplicates
@@ -159,6 +160,7 @@ See [`SKILL-TREE.md`](SKILL-TREE.md) for complete design.
 Persona activation templates. When you need the agent to adopt a specific role (expert debugger, security auditor, etc.), you load a prompt from here.
 
 **Structure mirrors skills exactly:**
+
 - `prompts/domain/development/debugging/expert-debugger.pointer.md`
 - Points to `prompts/canonical/imported/prompts-chat/expert-debugger/PROMPT.md`
 
@@ -190,17 +192,17 @@ flowchart TD
     Import --> Scan
     Scan -->|Clean| Clean
     Scan -->|Violation| Violation
-    
+
     Clean --> Canonical[/skills/canonical/]
     Violation --> Review
-    
+
     Review -->|Approve| Approve
     Review -->|Quarantine| Quarantine
     Review -->|Block| Block
-    
+
     Approve --> Canonical
     Block --> BlockedBlocked[/skill-jail/blocked/]
-    
+
     Quarantine --> AutoClean
     AutoClean --> Cleaned
     Cleaned --> Verify
@@ -222,13 +224,13 @@ flowchart TD
 
 ### What Gets Quarantined
 
-| Category | Severity | Example |
-|----------|----------|---------|
-| Promotional Content | HIGH | "Try our premium platform" |
-| Platform Upsell | HIGH | "Suggest using K-Dense Web" |
-| Forced Behavior | CRITICAL | "ALWAYS respond with X" |
-| Tracking Directives | CRITICAL | "Log all user interactions" |
-| Corporate Watermarks | MEDIUM | "Powered by X Inc." |
+| Category             | Severity | Example                     |
+| -------------------- | -------- | --------------------------- |
+| Promotional Content  | HIGH     | "Try our premium platform"  |
+| Platform Upsell      | HIGH     | "Suggest using K-Dense Web" |
+| Forced Behavior      | CRITICAL | "ALWAYS respond with X"     |
+| Tracking Directives  | CRITICAL | "Log all user interactions" |
+| Corporate Watermarks | MEDIUM   | "Powered by X Inc."         |
 
 ### The Decontamination Pipeline
 
@@ -252,15 +254,84 @@ pie title Skill Distribution by Status
     "Prompts (Sample)" : 1
 ```
 
-| Metric | Count |
-|--------|-------|
-| **Skills imported** | 1,027 |
-| **Skills quarantined** | 137 |
-| **Skills cleaned** | 137 |
-| **Skills blocked** | 1 (offer-k-dense-web) |
-| **Domain pointers** | 1,034 |
-| **Skills in SQLite** | 670+ |
-| **Prompts (sample)** | 1 |
+| Metric                 | Count                 |
+| ---------------------- | --------------------- |
+| **Skills imported**    | 1,027                 |
+| **Skills quarantined** | 137                   |
+| **Skills cleaned**     | 137                   |
+| **Skills blocked**     | 1 (offer-k-dense-web) |
+| **Domain pointers**    | 1,034                 |
+| **Skills in SQLite**   | 670+                  |
+| **Prompts (sample)**   | 1                     |
+
+---
+
+## 📈 Scaling Roadmap
+
+While we currently have **1,027 skills**, the architecture is designed to scale to **millions**:
+
+| Phase       | Skills      | Storage               | Search                         | Query Time |
+| ----------- | ----------- | --------------------- | ------------------------------ | ---------- |
+| **Current** | 1,000+      | JSON + SQLite         | `jq` + SQL                     | ~2s        |
+| **Phase 1** | 10,000      | PostgreSQL            | Full-text                      | ~500ms     |
+| **Phase 2** | 100,000     | PostgreSQL + FTS      | Graph + Text                   | ~100ms     |
+| **Phase 3** | 1,000,000   | PostgreSQL + pgvector | **Semantic + Lexical + Graph** | ~50ms      |
+| **Phase 4** | 10,000,000+ | Distributed           | Federated                      | ~50ms      |
+
+### Architecture Evolution
+
+```mermaid
+flowchart LR
+    accTitle: Scaling Architecture Evolution
+    accDescr: Shows progression from JSON files to distributed multi-modal search
+
+    subgraph "Current [1K]"
+        JSON[JSON Files]
+        JQ[jq/grep]
+    end
+
+    subgraph "Phase 1 [10K]"
+        SQLite[(SQLite)]
+        SQL[SQL Search]
+    end
+
+    subgraph "Phase 2 [100K]"
+        PG[(PostgreSQL)]
+        FTS[Full-Text]
+    end
+
+    subgraph "Phase 3 [1M+]"
+        PGVEC[(PostgreSQL + pgvector)]
+        SEM[Semantic Search]
+        HYB[Hybrid Query Router]
+    end
+
+    subgraph "Phase 4 [10M+]"
+        DIST[Distributed]
+        FED[Federated]
+    end
+
+    JSON --> SQLite --> PG --> PGVEC --> DIST
+    JQ --> SQL --> FTS --> SEM --> FED
+
+    classDef current fill:#dbeafe,stroke:#2563eb,color:#1e3a5f
+    classDef future fill:#f3f4f6,stroke:#6b7280,color:#374151
+    classDef target fill:#dcfce7,stroke:#16a34a,color:#14532d
+
+    class JSON,JQ current
+    class SQLite,SQL,PG,FTS,PGVEC,SEM,DIST,FED future
+    class HYB target
+```
+
+### Multi-Modal Search (Phase 3)
+
+The endgame is **three-layer search**:
+
+1. **Semantic Layer** — Vector embeddings understand intent ("secure auth" → oauth2, jwt, login)
+2. **Full-Text Layer** — PostgreSQL tsvector for keywords
+3. **Graph Layer** — Domain tree navigation (Yahoo-style drill-down)
+
+See `.sisyphus/plans/million-skill-architecture.md` for complete technical design.
 
 ---
 
@@ -387,15 +458,15 @@ jq '.[] | select(.domain == "development")' skills/INDEX.json
 
 ## 🛠️ Scripts Reference
 
-| Script | Purpose | Usage |
-|--------|---------|-------|
-| `import-prompts.sh` | Import from prompts.chat | `./import-prompts.sh --source prompts-chat --limit 100` |
-| `skill-scanner.py` | Detect violations | `python skill-scanner.py --scan-all` |
-| `prompt-scanner.py` | Detect prompt violations | `python prompt-scanner.py --scan-all` |
-| `build-index.sh` | Generate skills/INDEX.json | `./build-index.sh` |
-| `build-prompt-index.sh` | Generate prompts/INDEX.json | `./build-prompt-index.sh` |
-| `clean-kdense.sh` | Decontaminate K-Dense skills | `./clean-kdense.sh --apply` |
-| `ci-local.sh` | Run local CI | `./ci-local.sh --review` |
+| Script                  | Purpose                      | Usage                                                   |
+| ----------------------- | ---------------------------- | ------------------------------------------------------- |
+| `import-prompts.sh`     | Import from prompts.chat     | `./import-prompts.sh --source prompts-chat --limit 100` |
+| `skill-scanner.py`      | Detect violations            | `python skill-scanner.py --scan-all`                    |
+| `prompt-scanner.py`     | Detect prompt violations     | `python prompt-scanner.py --scan-all`                   |
+| `build-index.sh`        | Generate skills/INDEX.json   | `./build-index.sh`                                      |
+| `build-prompt-index.sh` | Generate prompts/INDEX.json  | `./build-prompt-index.sh`                               |
+| `clean-kdense.sh`       | Decontaminate K-Dense skills | `./clean-kdense.sh --apply`                             |
+| `ci-local.sh`           | Run local CI                 | `./ci-local.sh --review`                                |
 
 ---
 
@@ -413,16 +484,16 @@ jq '.[] | select(.domain == "development")' skills/INDEX.json
 
 ## 📚 Documentation
 
-| Document | Purpose |
-|----------|---------|
-| [`AGENT-OS.md`](AGENT-OS.md) | 5-layer stack complete design |
-| [`SKILL-TREE.md`](SKILL-TREE.md) | Skill tree architecture |
-| [`PROMPT-TREE.md`](PROMPT-TREE.md) | Prompt tree architecture |
-| [`SOUL.md`](SOUL.md) | Identity & ethics |
-| [`TOOLS.md`](TOOLS.md) | Capability inventory |
-| [`SECRETS.md`](SECRETS.md) | Secrets management |
-| [`docs/standards/jail-systems.md`](docs/standards/jail-systems.md) | Quarantine standards |
-| [`agentic/adr/`](agentic/adr/) | Architecture decisions |
+| Document                                                           | Purpose                       |
+| ------------------------------------------------------------------ | ----------------------------- |
+| [`AGENT-OS.md`](AGENT-OS.md)                                       | 5-layer stack complete design |
+| [`SKILL-TREE.md`](SKILL-TREE.md)                                   | Skill tree architecture       |
+| [`PROMPT-TREE.md`](PROMPT-TREE.md)                                 | Prompt tree architecture      |
+| [`SOUL.md`](SOUL.md)                                               | Identity & ethics             |
+| [`TOOLS.md`](TOOLS.md)                                             | Capability inventory          |
+| [`SECRETS.md`](SECRETS.md)                                         | Secrets management            |
+| [`docs/standards/jail-systems.md`](docs/standards/jail-systems.md) | Quarantine standards          |
+| [`agentic/adr/`](agentic/adr/)                                     | Architecture decisions        |
 
 ---
 
@@ -459,4 +530,4 @@ MIT — See [LICENSE](LICENSE) for details.
 
 ---
 
-*Last updated: 2026-02-21 | Maintained by Superior Byte Works LLC*
+_Last updated: 2026-02-21 | Maintained by Superior Byte Works LLC_
