@@ -11,12 +11,11 @@ Output:
 import sys
 from pathlib import Path
 
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+# Add skills root to path
+_skills_root = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(_skills_root / "field-boundaries" / "scripts"))
 
-from agri_toolkit.skills import FieldBoundariesSkill
-
-
+from field_boundaries import FieldBoundariesSkill
 def main():
     """Download and visualize field boundaries."""
     print("=" * 60)

@@ -2,9 +2,9 @@
 name: field-boundaries
 description: Access and visualize USDA field boundary data for agricultural analysis. Download field polygons, visualize coverage, filter by size, and export to GeoJSON or GeoParquet. Use when working with agricultural field data, crop boundaries, or field-level spatial analysis.
 metadata:
-  author: agri-data-toolkit
+  author: boreal-bytes
   version: '1.0'
-  source: https://github.com/borealBytes/agri-data-toolkit
+  source: https://github.com/SuperiorByteWorks-LLC/agent-project
 ---
 
 # Field Boundaries Skill

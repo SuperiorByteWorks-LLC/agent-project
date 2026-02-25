@@ -17,8 +17,29 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 
-from agri_toolkit.core.config import Config
-from agri_toolkit.downloaders.field_boundaries import FieldBoundaryDownloader
+import logging as _logging
+import sys as _sys
+import os as _os
+
+_sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+from _downloader import FieldBoundaryDownloader
+
+
+class Config:
+    """Minimal standalone configuration for agricultural data skills."""
+
+    def __init__(self, data_root: str = "data") -> None:
+        _logging.basicConfig(level=_logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+        self.logger = _logging.getLogger("agri_skills")
+        self._data_root = Path(data_root)
+
+    @property
+    def raw_data_path(self) -> Path:
+        return self._data_root / "raw"
+
+    @property
+    def processed_data_path(self) -> Path:
+        return self._data_root / "processed"
 
 
 class FieldBoundariesSkill:

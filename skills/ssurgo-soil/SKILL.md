@@ -2,9 +2,9 @@
 name: ssurgo-soil
 description: Access USDA NRCS SSURGO soil data for agricultural fields. Query soil properties including organic matter, pH, texture, drainage class, and available water capacity. Use when analyzing soil conditions, crop suitability, or field-level soil characteristics.
 metadata:
-  author: agri-data-toolkit
+  author: boreal-bytes
   version: '1.0'
-  source: https://github.com/borealBytes/agri-data-toolkit
+  source: https://github.com/SuperiorByteWorks-LLC/agent-project
 ---
 
 # SSURGO Soil Skill

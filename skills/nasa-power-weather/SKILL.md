@@ -2,9 +2,9 @@
 name: nasa-power-weather
 description: Access NASA POWER weather and climate data for agricultural fields. Retrieve time-series meteorological data including temperature, precipitation, solar radiation, humidity, and wind. Calculate growing degree days and accumulated precipitation. Use when analyzing weather patterns, climate impacts, or crop growth conditions.
 metadata:
-  author: agri-data-toolkit
+  author: boreal-bytes
   version: '1.0'
-  source: https://github.com/borealBytes/agri-data-toolkit
+  source: https://github.com/SuperiorByteWorks-LLC/agent-project
 ---
 
 # NASA POWER Weather Skill

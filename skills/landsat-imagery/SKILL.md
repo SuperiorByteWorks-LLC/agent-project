@@ -2,9 +2,9 @@
 name: landsat-imagery
 description: Access Landsat 8/9 satellite imagery for agricultural fields. Download multispectral imagery with bands for vegetation analysis, surface temperature, and land cover classification. Optimized for field-based AOI queries. Use when analyzing long-term crop trends, surface temperature, or historical field conditions.
 metadata:
-  author: agri-data-toolkit
+  author: boreal-bytes
   version: '1.0'
-  source: https://github.com/borealBytes/agri-data-toolkit
+  source: https://github.com/SuperiorByteWorks-LLC/agent-project
 ---
 
 # Landsat Imagery Skill

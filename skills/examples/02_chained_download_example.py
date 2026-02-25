@@ -14,16 +14,16 @@ Output files include CRS in filenames.
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+_skills_root = Path(__file__).resolve().parent.parent
+for _d in ["field-boundaries", "ssurgo-soil", "nasa-power-weather", "cdl-cropland"]:
+    sys.path.insert(0, str(_skills_root / _d / "scripts"))
 
 import pandas as pd
 
-from agri_toolkit.skills import (
-    CDLCroplandSkill,
-    FieldBoundariesSkill,
-    NASAPowerWeatherSkill,
-    SSURGOSoilSkill,
-)
+    from cdl_cropland import CDLCroplandSkill
+    from field_boundaries import FieldBoundariesSkill
+    from nasa_power_weather import NASAPowerWeatherSkill
+from ssurgo_soil import SSURGOSoilSkill
 
 
 def main():

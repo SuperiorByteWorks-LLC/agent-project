@@ -24,7 +24,24 @@ from rasterio.mask import mask
 from rasterio.plot import show
 from shapely.geometry import box, mapping
 
-from agri_toolkit.core.config import Config
+import logging as _logging
+
+
+class Config:
+    """Minimal standalone configuration for agricultural data skills."""
+
+    def __init__(self, data_root: str = "data") -> None:
+        _logging.basicConfig(level=_logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+        self.logger = _logging.getLogger("agri_skills")
+        self._data_root = Path(data_root)
+
+    @property
+    def raw_data_path(self) -> Path:
+        return self._data_root / "raw"
+
+    @property
+    def processed_data_path(self) -> Path:
+        return self._data_root / "processed"
 
 
 class LandsatImagerySkill:

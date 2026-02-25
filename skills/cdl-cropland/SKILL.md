@@ -2,9 +2,9 @@
 name: cdl-cropland
 description: Access USDA Cropland Data Layer (CDL) for annual crop type classifications. Retrieve crop classifications for agricultural fields across the US, analyze crop rotations, and visualize crop distributions. Use when identifying crop types, analyzing land use, or studying crop patterns over time.
 metadata:
-  author: agri-data-toolkit
+  author: boreal-bytes
   version: '1.0'
-  source: https://github.com/borealBytes/agri-data-toolkit
+  source: https://github.com/SuperiorByteWorks-LLC/agent-project
 ---
 
 # CDL Cropland Skill

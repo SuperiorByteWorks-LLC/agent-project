@@ -13,12 +13,15 @@ Creates:
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+_skills_root = Path(__file__).resolve().parent.parent
+for _d in ["field-boundaries", "nasa-power-weather"]:
+    sys.path.insert(0, str(_skills_root / _d / "scripts"))
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
-from agri_toolkit.skills import FieldBoundariesSkill, NASAPowerWeatherSkill
+from field_boundaries import FieldBoundariesSkill
+from nasa_power_weather import NASAPowerWeatherSkill
 
 
 def main():

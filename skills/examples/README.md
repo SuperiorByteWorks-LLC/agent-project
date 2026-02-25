@@ -1,4 +1,4 @@
-# Agri Data Toolkit - Skills Examples
+# Agricultural Data Skills — Examples
 
 This directory contains example scripts demonstrating how to use the agricultural data skills.
 
@@ -17,7 +17,6 @@ All examples use the **field-centric workflow**:
 Download and visualize field boundaries.
 
 ```bash
-cd packages/agri-data-toolkit
 python skills/examples/01_field_boundaries_example.py
 ```
 
@@ -64,7 +63,15 @@ python skills/examples/03_visualization_example.py
 All skills accept a `fields_geojson` parameter to download data ONLY for specific fields:
 
 ```python
-from agri_toolkit.skills import FieldBoundariesSkill, SSURGOSoilSkill
+import sys
+from pathlib import Path
+
+_skills_root = Path(__file__).resolve().parent.parent
+for _d in ["field-boundaries", "ssurgo-soil"]:
+    sys.path.insert(0, str(_skills_root / _d / "scripts"))
+
+from field_boundaries import FieldBoundariesSkill
+from ssurgo_soil import SSURGOSoilSkill
 
 # Step 1: Get field boundaries (small subset)
 field_skill = FieldBoundariesSkill()
@@ -145,8 +152,8 @@ Keep field counts small (20-50) for efficient local processing.
 
 ### Import Errors
 
+All skills are standalone. No package install needed — just add the skill's `scripts/` dir to your path:
+
 ```bash
-cd packages/agri-data-toolkit
-poetry install
-poetry run python skills/examples/01_field_boundaries_example.py
+python skills/examples/01_field_boundaries_example.py
 ```

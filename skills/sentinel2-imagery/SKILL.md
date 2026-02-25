@@ -2,9 +2,9 @@
 name: sentinel2-imagery
 description: Access Sentinel-2 satellite imagery for agricultural fields. Download multispectral imagery with specific bands (Red, NIR, SWIR) for vegetation analysis, NDVI calculation, and crop monitoring. Optimized for field-based AOI queries, not full scenes. Use when analyzing crop health, vegetation indices, or field-level satellite data.
 metadata:
-  author: agri-data-toolkit
+  author: boreal-bytes
   version: '1.0'
-  source: https://github.com/borealBytes/agri-data-toolkit
+  source: https://github.com/SuperiorByteWorks-LLC/agent-project
 ---
 
 # Sentinel-2 Imagery Skill
