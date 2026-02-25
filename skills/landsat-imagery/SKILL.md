@@ -70,7 +70,7 @@ skill.plot_index_timeseries(ndvi, field_id='field_001')
 
 ## Data Source
 
-- **USGS EarthExplorer**: https://earthexplorer.usgs.gov/
+- **USGS EarthExplorer**: <https://earthexplorer.usgs.gov/>
 - **Google Earth Engine**: LANDSAT/LC08/C02/T1_L2
 - **AWS Open Data**: s3://usgs-landsat/
 

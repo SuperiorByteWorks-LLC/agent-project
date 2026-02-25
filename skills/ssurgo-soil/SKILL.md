@@ -57,8 +57,8 @@ summary = skill.get_soil_summary(soil)
 
 ## Data Source
 
-- **Web Soil Survey**: https://websoilsurvey.sc.egov.usda.gov/
-- **Soil Data Access API**: https://sdmdataaccess.sc.egov.usda.gov/
+- **Web Soil Survey**: <https://websoilsurvey.sc.egov.usda.gov/>
+- **Soil Data Access API**: <https://sdmdataaccess.sc.egov.usda.gov/>
 
 ## Dependencies
 

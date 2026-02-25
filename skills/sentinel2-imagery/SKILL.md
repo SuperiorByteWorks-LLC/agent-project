@@ -68,7 +68,7 @@ skill.plot_ndvi(ndvi, field_id='field_001')
 
 ## Data Source
 
-- **Copernicus Data Space**: https://dataspace.copernicus.eu/
+- **Copernicus Data Space**: <https://dataspace.copernicus.eu/>
 - **AWS Open Data**: s3://sentinel-s2-l2a/
 
 ## Dependencies

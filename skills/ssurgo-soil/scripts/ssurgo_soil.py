@@ -5,7 +5,6 @@ Provides soil property data for agricultural fields including organic matter,
 pH, texture, drainage class, and available water capacity.
 """
 
-import io
 from pathlib import Path
 from typing import Any
 
@@ -13,9 +12,6 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
-from matplotlib.patches import Patch
-from shapely.geometry import Point
-
 from agri_toolkit.core.config import Config
 
 

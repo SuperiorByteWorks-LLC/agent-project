@@ -16,8 +16,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-import pandas as pd
-
 from agri_toolkit.skills import (
     CDLCroplandSkill,
     FieldBoundariesSkill,
@@ -93,7 +91,7 @@ def main():
         output_path="data/examples/cdl_EPSG4326.csv",
     )
     print(f"Retrieved crop data for {len(cdl)} field-years")
-    print(f"Crop distribution:")
+    print("Crop distribution:")
     print(cdl["crop_name"].value_counts())
 
     # Step 5: Combine data sources
@@ -133,7 +131,7 @@ def main():
     output_file = "data/examples/combined_data_EPSG4326.csv"
     combined.to_csv(output_file, index=False)
 
-    print(f"\nCombined dataset:")
+    print("\nCombined dataset:")
     print(f"  Fields: {len(combined)}")
     print(f"  Columns: {list(combined.columns)}")
     print(f"  Saved to: {output_file}")
@@ -143,9 +141,9 @@ def main():
     print("Complete! Output files:")
     print("-" * 70)
     print(f"  Fields:     {fields_file}")
-    print(f"  Soil:       data/examples/soil_EPSG4326.csv")
-    print(f"  Weather:    data/examples/weather.csv")
-    print(f"  Crops:      data/examples/cdl_EPSG4326.csv")
+    print("  Soil:       data/examples/soil_EPSG4326.csv")
+    print("  Weather:    data/examples/weather.csv")
+    print("  Crops:      data/examples/cdl_EPSG4326.csv")
     print(f"  Combined:   {output_file}")
     print("=" * 70)
 

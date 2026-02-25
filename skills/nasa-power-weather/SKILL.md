@@ -79,8 +79,8 @@ seasonal = skill.get_seasonal_summary(weather, season='growing')
 
 ## Data Source
 
-- **NASA POWER API**: https://power.larc.nasa.gov/api/
-- **Documentation**: https://power.larc.nasa.gov/docs/
+- **NASA POWER API**: <https://power.larc.nasa.gov/api/>
+- **Documentation**: <https://power.larc.nasa.gov/docs/>
 
 ## Dependencies
 

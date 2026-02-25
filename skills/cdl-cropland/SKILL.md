@@ -68,8 +68,8 @@ summary = skill.get_crop_summary(cdl)
 
 ## Data Source
 
-- **USDA CropScape**: https://croplandcros.scinet.usda.gov/
-- **Direct Download**: https://www.nass.usda.gov/Research_and_science/Cropland/Release/
+- **USDA CropScape**: <https://croplandcros.scinet.usda.gov/>
+- **Direct Download**: <https://www.nass.usda.gov/Research_and_science/Cropland/Release/>
 
 ## Dependencies
 

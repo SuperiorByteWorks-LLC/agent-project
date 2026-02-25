@@ -4,19 +4,14 @@ High-level skill for accessing NASA POWER weather and climate data.
 Provides meteorological time series for agricultural analysis.
 """
 
-import json
-from datetime import datetime
 from pathlib import Path
-from typing import Any
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
-from matplotlib.dates import DateFormatter
-from shapely.geometry import Point
-
 from agri_toolkit.core.config import Config
+from matplotlib.dates import DateFormatter
 
 
 class NASAPowerWeatherSkill:

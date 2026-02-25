@@ -17,7 +17,6 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 import matplotlib.pyplot as plt
 import pandas as pd
-
 from agri_toolkit.skills import FieldBoundariesSkill, NASAPowerWeatherSkill
 
 

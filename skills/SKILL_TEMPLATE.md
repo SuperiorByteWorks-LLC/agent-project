@@ -14,10 +14,12 @@
 {method_1_description}
 
 Parameters:
+
 - `{param_1}` ({type}): {description}
 - `{param_2}` ({type}): {description}
 
 Returns:
+
 - {return_type}: {description}
 
 ### {method_2}
@@ -25,9 +27,11 @@ Returns:
 {method_2_description}
 
 Parameters:
+
 - `{param_1}` ({type}): {description}
 
 Returns:
+
 - {return_type}: {description}
 
 ## Examples

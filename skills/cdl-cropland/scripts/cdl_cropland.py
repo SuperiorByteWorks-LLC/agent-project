@@ -9,12 +9,7 @@ from typing import Any
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
-import rasterio
-from matplotlib.patches import Patch
-from rasterio.features import rasterize
-
 from agri_toolkit.core.config import Config
 
 

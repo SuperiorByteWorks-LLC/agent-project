@@ -102,18 +102,19 @@ skills/ → Agent Skills for agricultural data analysis (see below)
 
 This repository includes Agent Skills for agricultural data analysis. These skills provide high-level interfaces to common data sources and should be used by default when working with agricultural data.
 
-| Skill | Purpose | When to Use |
-|-------|---------|-------------|
-| **field-boundaries** | Access USDA field boundary data | When you need field polygons, crop boundaries, or field-level spatial analysis |
-| **ssurgo-soil** | Access USDA NRCS SSURGO soil data | When analyzing soil conditions, pH, organic matter, texture, or drainage |
-| **nasa-power-weather** | Access NASA POWER weather data | When you need historical weather, temperature, precipitation, or solar radiation |
-| **cdl-cropland** | Access USDA Cropland Data Layer | When identifying crop types, analyzing land use, or studying crop rotations |
-| **sentinel2-imagery** | Access Sentinel-2 satellite imagery | When analyzing crop health, NDVI, or vegetation indices |
-| **landsat-imagery** | Access Landsat 8/9 satellite imagery | When analyzing long-term trends or historical field conditions |
+| Skill                  | Purpose                              | When to Use                                                                      |
+| ---------------------- | ------------------------------------ | -------------------------------------------------------------------------------- |
+| **field-boundaries**   | Access USDA field boundary data      | When you need field polygons, crop boundaries, or field-level spatial analysis   |
+| **ssurgo-soil**        | Access USDA NRCS SSURGO soil data    | When analyzing soil conditions, pH, organic matter, texture, or drainage         |
+| **nasa-power-weather** | Access NASA POWER weather data       | When you need historical weather, temperature, precipitation, or solar radiation |
+| **cdl-cropland**       | Access USDA Cropland Data Layer      | When identifying crop types, analyzing land use, or studying crop rotations      |
+| **sentinel2-imagery**  | Access Sentinel-2 satellite imagery  | When analyzing crop health, NDVI, or vegetation indices                          |
+| **landsat-imagery**    | Access Landsat 8/9 satellite imagery | When analyzing long-term trends or historical field conditions                   |
 
 ### Using Skills
 
 Skills are located in `skills/<skill-name>/` directories. Each skill contains:
+
 - `SKILL.md` - Documentation and usage instructions
 - `scripts/` - Python implementation
 
